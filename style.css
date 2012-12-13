@@ -44,6 +44,36 @@ nav ul li a:hover {
 	color:black;
 }
 
+.search-results ul li a {
+	font-size:30px;
+	line-height:30px;
+}
+
+.meta {
+	color:#2AE84D;
+}
+
+.meta span {
+	margin-right:30px;
+}
+
+.post-info {
+	border:1px solid #A3A3A3;
+}
+
+.story_content {
+	padding:15px;
+	border-left:1px solid #A3A3A3;
+	border-right:1px solid #A3A3A3;
+	border-bottom:1px solid #A3A3A3;
+}
+
+.story_content p {
+	margin:0px;
+}
+
+/************* CMS STYLES **************************/
+
 .alignright {
 	float:right;
 }
