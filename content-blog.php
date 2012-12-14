@@ -8,7 +8,7 @@
 				<span class="num-comments"><?php comments_number('no comments','one comment','% comments'); ?></span>
 			</div>
 		</div>
-		<div class="story_content">
+		<div class="story_content_single">
 			<?php the_content() ?>
 		</div>
 	<?php endwhile?>
