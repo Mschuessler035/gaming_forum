@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Margarine' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
 		<?php get_header() ?>
 	</head>
 	<body>
 		<div id="wrapper">
 			<header>
-				<h1><?php bloginfo('name') ?></h1>
+				<h1><?php bloginfo('name') ?><img src="wp-content/themes/myfirsttheme/images/gs-icon-60.png" alt="icon"></h1>
+				
 			</header>
 			
 			<nav id="primary-nav">
@@ -16,7 +19,7 @@
 			<div id="main">
 				<div class="row">
 					<!-- MAIN COLUMN -->
-					<div class="span9">
+					<div class="span8">
 						<?php 
 							/**
 							 * check to see if the current request...
@@ -33,15 +36,20 @@
 							if  (is_front_page()) {
 								// Include file name content-home.php
 								get_template_part('content','home');
+							
 							} elseif (is_page() || is_single()) {
 								// Include file named content-single.php
 								get_template_part('content','single');
 							} elseif (is_search()) {
 								// Include file named content-search.php
 								get_template_part('content','search');
-							} else { // Display posts!
-								// Include file named content-blog.php
-								get_template_part('content','blog');
+							} elseif (is_category()) {
+								$cat = get_category(get_query_var('cat'),false);
+								if (stristr($cat->slug, 'news')) {
+									get_template_part('content','news');
+								} elseif (stristr($cat->slug, 'posts')) {
+									get_template_part('content','posts');
+								}
 							}
 						?>
 					</div>

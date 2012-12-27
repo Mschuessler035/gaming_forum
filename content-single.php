@@ -1,6 +1,6 @@
 <?php if(have_posts()) : ?>
 	<?php while(have_posts()) : the_post() ?>
-		<div class="post-info">
+		<div class="story-content">
 			<h2><?php the_title() ?></h2>
 			<div class="meta">
 				<span class="author">by <?php echo the_author()?></span>
@@ -11,6 +11,8 @@
 		<div class="story_content_single">
 			<?php the_content() ?>
 		</div>
-		<?php comments_template() ?>
+			<?php
+				comments_template()
+			?>
 	<?php endwhile?>
 <?php endif ?>
